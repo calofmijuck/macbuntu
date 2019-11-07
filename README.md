@@ -50,13 +50,17 @@ $ sudo ubuntu-drivers autoinstall
 ```
 
 ### Korean Input
-1. Settings > Region & Language > Manage Installed Languages > Install (if necessary)
+1. `Settings > Region & Language > Manage Installed Languages > Install` (if necessary)
 2. Select `iBus` as keyboard input method.
 3. Open terminal and
 ```
 $ ibus-setup
 ```
-4. Input Method > Add
+4. `Input Method > Add`
+5. Search for `Korean` and select `Hangul`. If it doesn't exist, reboot.
+6. Click `Preferences > Add` and select 한/영 key.
+7. Add `Korean (Hangul)` to `Input Sources`, and move it to top.
+8. Test if it works!
 
 ### Necessary Programs
 - Chrome
