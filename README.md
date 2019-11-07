@@ -50,6 +50,10 @@ $ sudo ubuntu-drivers autoinstall
 ```
 
 ### Korean Input
+(**uim Method**)
+Follow the instructions [here](http://progtrend.blogspot.com/2018/06/ubuntu-1804-uim.html).
+
+(Deprecated - iBus Method)
 1. `Settings > Region & Language > Manage Installed Languages > Install` (if necessary)
 2. Select `iBus` as keyboard input method.
 3. Open terminal and
@@ -64,6 +68,13 @@ $ ibus-setup
 
 ### Necessary Programs
 - Chrome
+- git
+- gcc/g++, java, python3
+- VSCode
+- Slack
+- zsh, zsh-syntax-highlighting, powerlevel10k
+
+
 
 ## macOS Theme
 
