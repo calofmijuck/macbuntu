@@ -37,10 +37,29 @@ $ sudo apt-get update
 $ sudo apt-get upgrade
 ```
 ### NVIDIA Graphics Driver
+1. Go to [NVIDIA Driver Downloads](https://www.nvidia.co.kr/Download/index.aspx?lang=kr#) and get `.run` file.
+2. Open terminal and execute the downloaded file as root.
+```
+$ sudo ./NVIDIA-*.run
+```
+3. Logout and log back in.
+
+(Not Tested - Check Later)
+```
+$ sudo ubuntu-drivers autoinstall
+```
 
 ### Korean Input
+1. Settings > Region & Language > Manage Installed Languages > Install (if necessary)
+2. Select `iBus` as keyboard input method.
+3. Open terminal and
+```
+$ ibus-setup
+```
+4. Input Method > Add
 
 ### Necessary Programs
+- Chrome
 
 ## macOS Theme
 
