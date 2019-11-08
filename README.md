@@ -77,6 +77,14 @@ $ ibus-setup
 
 
 ## macOS Theme
-
+### Theme
+1. Install gnome-shell
+```
+$ sudo apt-get install gnome-shell
+```
+2. Install gnome-tweak-tool
+```
+$ sudo apt-get install gnome-tweak-tool
+```
 ### Plank
 
