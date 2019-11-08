@@ -124,6 +124,11 @@ set mouse=a
 </pre>
 </details>
 
+### Windows & Ubuntu Time Difference
+```
+timedatectl set-local-rtc 1 --adjust-system-clock
+```
+
 ## macOS Theme
 ### Theme
 1. Install gnome-shell
