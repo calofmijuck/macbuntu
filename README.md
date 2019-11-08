@@ -86,5 +86,25 @@ $ sudo apt-get install gnome-shell
 ```
 $ sudo apt-get install gnome-tweak-tool
 ```
+3. Install theme and save it to `~/.themes`. [macOS Sierra Theme](https://github.com/B00merang-Project/macOS.git).
+4. Install icon theme and save it to `~/.icons`. [La Capitaine Icon Theme](https://github.com/keeferrourke/la-capitaine-icon-theme).
+5. Open `Tweaks` application and configure.
+
+- Troubleshooting
+1. Unable to change shell theme
+```
+$ sudo apt-get install chrome-gnome-shell
+```
+2. Try Rebooting ...
+
 ### Plank
+1. Install
+```
+$ sudo apt-get install plank
+```
+2. Disable Ubuntu Dock
+3. Configure
+```
+$ plank --preferences
+```
 
