@@ -33,20 +33,20 @@ These _normal_ steps didn't work for me, so I had to go to BIOS settings, and ch
 
 ## Setting up Ubuntu
 ```
-$ sudo apt-get update
-$ sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get upgrade
 ```
 ### NVIDIA Graphics Driver
 1. Go to [NVIDIA Driver Downloads](https://www.nvidia.co.kr/Download/index.aspx?lang=kr#) and get `.run` file.
 2. Open terminal and execute the downloaded file as root.
 ```
-$ sudo ./NVIDIA-*.run
+sudo ./NVIDIA-*.run
 ```
 3. Logout and log back in.
 
 (Not Tested - Check Later)
 ```
-$ sudo ubuntu-drivers autoinstall
+sudo ubuntu-drivers autoinstall
 ```
 
 ### Korean Input
@@ -58,7 +58,7 @@ Follow the instructions [here](http://progtrend.blogspot.com/2018/06/ubuntu-1804
 2. Select `iBus` as keyboard input method.
 3. Open terminal and
 ```
-$ ibus-setup
+ibus-setup
 ```
 4. `Input Method > Add`
 5. Search for `Korean` and select `Hangul`. If it doesn't exist, reboot.
@@ -74,17 +74,65 @@ $ ibus-setup
 - Slack
 - zsh, zsh-syntax-highlighting, powerlevel10k
 
+### zsh
+```
+sudo apt-get install zsh
+chsh -s `which zsh`
+sudo apt-get install curl
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+```
+1. Set `ZSH_THEME="agnoster"` in `.zshrc`
+2. zsh syntax highlighting
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+```
+3. [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+```
 
+4. Install [Powerline Fonts](https://github.com/powerline/fonts).
+
+### vim
+```
+sudo apt-get install vim
+```
+(When hitting arrow keys may add characters try installing vim)
+<details>
+<summary>.vimrc</summary>
+<pre>
+set number
+set ai
+set si
+set cindent
+set shiftwidth=4
+set tabstop=4
+set ignorecase
+set hlsearch
+set nocompatible
+set fileencodings=utf-8,euc-kr
+set fencs=ucs-bom,utf-8,euc-kr
+set bs=indent,eol,start
+set ruler
+set title
+set showmatch
+set wmnu
+syntax on
+filetype indent on
+set mouse=a
+</pre>
+</details>
 
 ## macOS Theme
 ### Theme
 1. Install gnome-shell
 ```
-$ sudo apt-get install gnome-shell
+sudo apt-get install gnome-shell
 ```
 2. Install gnome-tweak-tool
 ```
-$ sudo apt-get install gnome-tweak-tool
+sudo apt-get install gnome-tweak-tool
 ```
 3. Install theme and save it to `~/.themes`. [macOS Sierra Theme](https://github.com/B00merang-Project/macOS.git).
 4. Install icon theme and save it to `~/.icons`. [La Capitaine Icon Theme](https://github.com/keeferrourke/la-capitaine-icon-theme).
@@ -93,18 +141,22 @@ $ sudo apt-get install gnome-tweak-tool
 - Troubleshooting
 1. Unable to change shell theme
 ```
-$ sudo apt-get install chrome-gnome-shell
+sudo apt-get install chrome-gnome-shell
 ```
 2. Try Rebooting ...
 
 ### Plank
 1. Install
 ```
-$ sudo apt-get install plank
+sudo apt-get install plank
 ```
 2. Disable Ubuntu Dock
-3. Configure
 ```
-$ plank --preferences
+sudo apt remove gnome-shell-extension-ubuntu-dock
+```
+3. Press `Alt + F2` and type `r`
+4. Configure Plank
+```
+plank --preferences
 ```
 
