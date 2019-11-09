@@ -69,7 +69,7 @@ ibus-setup
 ### Necessary Programs
 - Chrome
 - git
-- gcc/g++, java, python3
+- gcc/g++, java, python3, python3-pip
 - VSCode
 - Slack
 - zsh, zsh-syntax-highlighting, powerlevel10k
