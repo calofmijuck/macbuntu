@@ -81,24 +81,34 @@ chsh -s `which zsh`
 sudo apt-get install curl
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 ```
-1. Set `ZSH_THEME="agnoster"` in `.zshrc`
-2. zsh syntax highlighting
+1. zsh syntax highlighting
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
-3. [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- Note: The second line must be executed inside zsh. (Not in bash)
+
+2. [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
+- And set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
 
-4. Install [Powerline Fonts](https://github.com/powerline/fonts).
+3. Install [Powerline Fonts](https://github.com/powerline/fonts).
+
+```
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+```
 
 ### vim
 ```
 sudo apt-get install vim
 ```
-(When hitting arrow keys may add characters try installing vim)
+(When hitting arrow keys add characters,  try installing vim)
 <details>
 <summary>.vimrc</summary>
 <pre>
