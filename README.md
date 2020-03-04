@@ -155,9 +155,14 @@ sudo apt-get install gnome-tweak-tool
 
 - Troubleshooting
 1. Unable to change shell theme
-```
-sudo apt-get install chrome-gnome-shell
-```
+   - Go to https://extensions.gnome.org
+   - Click `click here to install browser extension`
+   - Install `chrome-gnome-shell`
+   ```
+   sudo apt-get install chrome-gnome-shell
+   ```
+   - Go to https://extensions.gnome.org/extension/19/user-themes/ and enable
+   
 2. Try Rebooting ...
 
 ### Plank
