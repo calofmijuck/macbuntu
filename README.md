@@ -187,3 +187,55 @@ plank --preferences
 ### Touchpad Gestures
 - https://www.thefanclub.co.za/how-to/ubuntu-touchpad-gestures-install
 
+### Window Title Bar Height Modification
+
+```
+vim ~/.config/gtk-3.0/gtk.css 
+```
+<details>
+<summary>gtk.css</summary>
+<pre>
+/* shrink headerbars (don't forget semicolons after each property) */
+headerbar {
+    min-height: 0px;
+    padding-left: 5px; /* same as childrens vertical margins for nicer proportions */
+    padding-right: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color: #2d2d2d;
+}
+
+headerbar entry,
+headerbar spinbutton,
+headerbar button,
+headerbar separator {
+    margin-top: 0px; /* same as headerbar side padding for nicer proportions */
+    margin-bottom: 0px;
+}
+
+/* shrink ssd titlebars */
+.default-decoration {
+    min-height: 0; /* let the entry and button drive the titlebar size */
+    padding: 0px;
+    background-color: #2d2d2d;
+}
+
+.default-decoration .titlebutton {
+    min-height: 0px; /* tweak these two props to reduce button size */
+    min-width: 0px;
+}
+
+window.ssd headerbar.titlebar {
+    padding: 5px;
+    min-height: 0;
+}
+
+window.ssd headerbar.titlebar button.titlebutton {
+    padding: 5px;
+    min-height: 0;
+}
+
+</pre>
+</details>
+
+
