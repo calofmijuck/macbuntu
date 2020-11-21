@@ -51,20 +51,24 @@ sudo ubuntu-drivers autoinstall
 
 ### Korean Input
 (**uim Method**)
-Follow the instructions [here](http://progtrend.blogspot.com/2018/06/ubuntu-1804-uim.html).
 
-(Deprecated - iBus Method)
-1. `Settings > Region & Language > Manage Installed Languages > Install` (if necessary)
-2. Select `iBus` as keyboard input method.
-3. Open terminal and
+```bash
+sudo apt-get install uim uim-byeoru
 ```
-ibus-setup
-```
-4. `Input Method > Add`
-5. Search for `Korean` and select `Hangul`. If it doesn't exist, reboot.
-6. Click `Preferences > Add` and select 한/영 key.
-7. Add `Korean (Hangul)` to `Input Sources`, and move it to top.
-8. Test if it works!
+
+1. Go to `Language Support` and change `Keyboard input method system` to `uim`
+1. Reboot
+1. Modify keymap
+  ```
+  echo "xmodmap -e 'keycode 108 = Hangul'" > keymap
+  chmod 744 keymap
+  ./keymap
+  ```
+4. Open `Input Method` and configure.
+  - Enable `Specify default IM`
+  - Select `Default input method` as `Byeoru`
+  - Select only `Byeoru` in `Enabled input methods`
+  - Go to `Byeoru key bindings 1` and set `"hangul"` for both `[Byeoru] on / [Byeoru] off`
 
 ### Necessary Programs
 - Chrome
@@ -149,7 +153,7 @@ sudo apt-get install gnome-shell
 ```
 sudo apt-get install gnome-tweak-tool
 ```
-3. Install theme and save it to `~/.themes`. [macOS Sierra Theme](https://github.com/B00merang-Project/macOS.git).
+3. Install theme and save it to `~/.themes`. [macOS Theme](https://github.com/B00merang-Project/macOS.git).
 4. Install icon theme and save it to `~/.icons`. [La Capitaine Icon Theme](https://github.com/keeferrourke/la-capitaine-icon-theme).
 5. Open `Tweaks` application and configure.
 
@@ -179,4 +183,7 @@ sudo apt remove gnome-shell-extension-ubuntu-dock
 ```
 plank --preferences
 ```
+
+### Touchpad Gestures
+- https://www.thefanclub.co.za/how-to/ubuntu-touchpad-gestures-install
 
