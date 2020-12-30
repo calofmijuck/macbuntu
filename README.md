@@ -44,10 +44,11 @@ sudo ./NVIDIA-*.run
 ```
 3. Logout and log back in.
 
-(Not Tested - Check Later)
-```
-sudo ubuntu-drivers autoinstall
-```
+#### Alternative
+
+1. Search and open `Software & Updates`.
+2. Select `Additional Drivers` tab.
+3. Select appropriate driver and `Apply Changes` (auto reboot).
 
 ### Korean Input
 (**uim Method**)
