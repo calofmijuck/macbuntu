@@ -36,6 +36,13 @@ These _normal_ steps didn't work for me, so I had to go to BIOS settings, and ch
 sudo apt-get update
 sudo apt-get upgrade
 ```
+
+### Changing Hostname
+
+```
+sudo hostname <new_hostname>
+```
+
 ### NVIDIA Graphics Driver
 1. Go to [NVIDIA Driver Downloads](https://www.nvidia.co.kr/Download/index.aspx?lang=kr#) and get `.run` file.
 2. Open terminal and execute the downloaded file as root.
@@ -72,12 +79,17 @@ sudo apt-get install uim uim-byeoru
   - Go to `Byeoru key bindings 1` and set `"hangul"` for both `[Byeoru] on / [Byeoru] off`
 
 ### Necessary Programs
-- Chrome
-- git
-- gcc/g++, java, python3, python3-pip
-- VSCode
-- Slack
+- Chrome, VSCode, Slack
+- git, gcc/g++, java, python3, python3-pip
 - zsh, zsh-syntax-highlighting, powerlevel10k
+
+UPD: Ubuntu 20.04.1 LTS
+- gcc/g++, python3 are automatically installed.
+
+```
+sudo apt-get install -y git openjdk-11-jre-headless python3-pip
+sudo snap install --classic code
+```
 
 ### zsh
 ```
