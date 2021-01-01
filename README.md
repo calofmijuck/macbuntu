@@ -89,6 +89,14 @@ UPD: Ubuntu 20.04.1 LTS
 ```
 sudo apt-get install -y git openjdk-11-jre-headless python3-pip
 sudo snap install --classic code
+sudo snap install --classic slack
+```
+
+- git config
+
+```
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 ```
 
 ### zsh
