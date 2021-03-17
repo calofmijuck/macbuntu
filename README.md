@@ -215,7 +215,8 @@ vim ~/.config/gtk-3.0/gtk.css
 ```
 <details>
 <summary>gtk.css</summary>
-<pre>
+
+```css
 /* shrink headerbars (don't forget semicolons after each property) */
 headerbar {
     min-height: 0px;
@@ -255,8 +256,8 @@ window.ssd headerbar.titlebar button.titlebutton {
     padding: 5px;
     min-height: 0;
 }
+```
 
-</pre>
 </details>
 
 
