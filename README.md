@@ -175,7 +175,7 @@ sudo apt-get install gnome-shell
 sudo apt-get install gnome-tweak-tool
 ```
 3. Install theme and save it to `~/.themes`. [macOS Theme](https://github.com/B00merang-Project/macOS.git).
-4. Install icon theme and save it to `~/.icons`. [La Capitaine Icon Theme](https://github.com/keeferrourke/la-capitaine-icon-theme).
+4. Install icon theme and save it to `~/.icons`. [La Capitaine Icon Theme](https://github.com/keeferrourke/la-capitaine-icon-theme), [Os-Catalina-icons](https://github.com/zayronxio/Os-Catalina-icons)
 5. Open `Tweaks` application and configure.
 
 - Troubleshooting
@@ -221,9 +221,9 @@ headerbar {
     min-height: 0px;
     padding-left: 5px; /* same as childrens vertical margins for nicer proportions */
     padding-right: 5px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	background-color: #2d2d2d;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: #2d2d2d;
 }
 
 headerbar entry,
