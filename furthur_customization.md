@@ -20,3 +20,17 @@ alias dev="cd ~/dev"
 ```bash
 (To be added)
 ```
+
+### ifconfig
+
+```bash
+ip addr
+sudo apt-get install net-tools # installs ifconfig
+```
+
+### SSH
+
+```
+sudo apt-get install openssh-server
+ssh-keygen
+```
