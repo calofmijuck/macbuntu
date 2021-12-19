@@ -10,6 +10,12 @@ alias mkdir="mkdir -pv"
 
 alias desk="cd ~/Desktop"
 alias dev="cd ~/dev"
+alias du='du -kh'
+alias df='df -kTh'
+alias his='history | tail'
+
+alias venv=". env/bin/activate"
+alias lint='python_lint'
 ```
 
 
