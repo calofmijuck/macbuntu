@@ -18,6 +18,12 @@
 - Chrome
 - Bitwarden
 - Kakaotalk
+- Runcat
+- Adblock Pro for Safari
+- Rectangle (Magnet Alternative)
+- Todoist
+- Notion
+- Github Desktop
 
 ## Misc
 
