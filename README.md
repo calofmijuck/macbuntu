@@ -4,11 +4,14 @@ How I set up my Ubuntu Desktop that looks like a mac. ~_Low Budget iMac..._~
 ## Installation
 
 ### Creating a boot USB
+
 1. Download [Ubuntu Desktop](https://ubuntu.com/download/desktop) ISO file. (Currently 18.04.3 LTS)
 2. Use [Rufus](https://rufus.ie/) to create a boot USB, using the downloaded ISO file.
 
 ### Boot with USB
+
 0. Make sure that you have a partition that you can install Ubuntu.
+
 ```
 (Windows) cmd> diskmgmt.msc
 ```
@@ -17,6 +20,7 @@ How I set up my Ubuntu Desktop that looks like a mac. ~_Low Budget iMac..._~
 2. On GNU GRUB, select **Install Ubuntu**.
 
 ### Begin Installation
+
 1. Select preferred language, and keyboard layout.
 2. On Installation Type, select **Something Else**. (Also check if the installer is installing on the correct partition)
 3. Select _free space_ and click `+` button.
@@ -32,6 +36,7 @@ How I set up my Ubuntu Desktop that looks like a mac. ~_Low Budget iMac..._~
 These _normal_ steps didn't work for me, so I had to go to BIOS settings, and changed UEFI Hard Disk Drive BBS Priorities to ubuntu.
 
 ## Setting up Ubuntu
+
 ```
 sudo apt-get update
 sudo apt-get upgrade
@@ -44,11 +49,14 @@ sudo hostname <new_hostname>
 ```
 
 ### NVIDIA Graphics Driver
+
 1. Go to [NVIDIA Driver Downloads](https://www.nvidia.co.kr/Download/index.aspx?lang=kr#) and get `.run` file.
 2. Open terminal and execute the downloaded file as root.
-```
-sudo ./NVIDIA-*.run
-```
+
+    ```
+    sudo ./NVIDIA-*.run
+    ```
+
 3. Logout and log back in.
 
 #### Alternative
@@ -58,6 +66,7 @@ sudo ./NVIDIA-*.run
 3. Select appropriate driver and `Apply Changes` (auto reboot).
 
 ### Korean Input
+
 (**uim Method**)
 
 ```bash
@@ -65,13 +74,15 @@ sudo apt-get install uim uim-byeoru
 ```
 
 1. Go to `Language Support` and change `Keyboard input method system` to `uim`
-1. Reboot
-1. Modify keymap
-  ```
-  echo "xmodmap -e 'keycode 108 = Hangul'" > keymap
-  chmod 744 keymap
-  ./keymap
-  ```
+2. Reboot
+3. Modify keymap
+
+    ```
+    echo "xmodmap -e 'keycode 108 = Hangul'" > keymap
+    chmod 744 keymap
+    ./keymap
+    ```
+
 4. Open `Input Method` and configure.
   - Enable `Specify default IM`
   - Select `Default input method` as `Byeoru`
@@ -79,6 +90,7 @@ sudo apt-get install uim uim-byeoru
   - Go to `Byeoru key bindings 1` and set `"hangul"` for both `[Byeoru] on / [Byeoru] off`
 
 ### Necessary Programs
+
 - Chrome, VSCode, Slack
 - git, gcc/g++, java, python3, python3-pip
 - zsh, zsh-syntax-highlighting, powerlevel10k
@@ -100,23 +112,32 @@ git config --global user.name "Your Name"
 ```
 
 ### zsh
+
 ```
 sudo apt-get install zsh
 chsh -s `which zsh`
 sudo apt-get install curl
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 ```
-1. zsh syntax highlighting
+
+1. Syntax Highlighting & Autosuggestions
+
 ```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+sudo apt install zsh-syntax-highlighting
+echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
+
 - Note: The second line must be executed inside zsh. (Not in bash)
+- Add the plugin to the list of plugins for oh-my-zsh inside `~/.zshrc`.
 
 2. [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
+
 - And set `ZSH_THEME="powerlevel10k/powerlevel10k"` in `~/.zshrc`
 
 3. Install [Powerline Fonts](https://github.com/powerline/fonts).
@@ -160,58 +181,64 @@ set mouse=a
 </details>
 
 ### Windows & Ubuntu Time Difference
+
 ```
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
 
 ## macOS Theme
+
 ### Theme
+
 1. Install gnome-shell
-```
-sudo apt-get install gnome-shell
-```
+    ```
+    sudo apt-get install gnome-shell
+    ```
 2. Install gnome-tweak-tool
-```
-sudo apt-get install gnome-tweak-tool
-```
+    ```
+    sudo apt-get install gnome-tweak-tool
+    ```
 3. Install theme and save it to `~/.themes`. [macOS Theme](https://github.com/B00merang-Project/macOS.git).
 4. Install icon theme and save it to `~/.icons`. [La Capitaine Icon Theme](https://github.com/keeferrourke/la-capitaine-icon-theme), [Os-Catalina-icons](https://github.com/zayronxio/Os-Catalina-icons)
 5. Open `Tweaks` application and configure.
 
-- Troubleshooting
+#### Troubleshooting
+
 1. Unable to change shell theme
    - Go to https://extensions.gnome.org
    - Click `click here to install browser extension`
    - Install `chrome-gnome-shell`
-   ```
-   sudo apt-get install chrome-gnome-shell
-   ```
+        ```
+        sudo apt-get install chrome-gnome-shell
+        ```
    - Go to https://extensions.gnome.org/extension/19/user-themes/ and enable
-   
+
 2. Try Rebooting ...
 
 ### Plank
+
 1. Install
-```
-sudo apt-get install plank
-```
+    ```
+    sudo apt-get install plank
+    ```
 2. Disable Ubuntu Dock
-```
-sudo apt remove gnome-shell-extension-ubuntu-dock
-```
+    ```
+    sudo apt remove gnome-shell-extension-ubuntu-dock
+    ```
 3. Press `Alt + F2` and type `r`
 4. Configure Plank
-```
-plank --preferences
-```
+    ```
+    plank --preferences
+    ```
 
 ### Touchpad Gestures
+
 - https://www.thefanclub.co.za/how-to/ubuntu-touchpad-gestures-install
 
 ### Window Title Bar Height Modification
 
 ```
-vim ~/.config/gtk-3.0/gtk.css 
+vim ~/.config/gtk-3.0/gtk.css
 ```
 <details>
 <summary>gtk.css</summary>
@@ -259,5 +286,3 @@ window.ssd headerbar.titlebar button.titlebutton {
 ```
 
 </details>
-
-
