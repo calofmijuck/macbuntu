@@ -10,9 +10,9 @@ rm .zshrc
 wget https://raw.githubusercontent.com/calofmijuck/macbuntu/master/ubuntu-image/.zshrc
 
 rm .vimrc
-wget https://github.com/calofmijuck/macbuntu/blob/master/ubuntu-image/.vimrc
+wget https://raw.githubusercontent.com/calofmijuck/macbuntu/master/ubuntu-image/.vimrc
 
-wget https://github.com/calofmijuck/macbuntu/blob/master/ubuntu-image/.tmux.conf
+wget https://raw.githubusercontent.com/calofmijuck/macbuntu/master/ubuntu-image/.tmux.conf
 
 echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
