@@ -21,3 +21,6 @@ alias zshrc="vi ~/.zshrc"
 alias zshapply="source ~/.zshrc"
 
 alias tmux="tmux -u"
+alias ta="tmux -CC attach"
+
+export RPROMPT="[%*]"
