@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 sudo apt update -y && apt upgrade -y
-sudo apt install -y git curl vim zsh net-tools zsh-syntax-highlighting
+sudo apt install -y git curl vim zsh net-tools
 
 # oh-my-zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
@@ -12,10 +12,12 @@ wget https://raw.githubusercontent.com/calofmijuck/macbuntu/master/ubuntu-image/
 rm .vimrc
 wget https://raw.githubusercontent.com/calofmijuck/macbuntu/master/ubuntu-image/.vimrc
 
+rm .tmux.conf
 wget https://raw.githubusercontent.com/calofmijuck/macbuntu/master/ubuntu-image/.tmux.conf
 
 echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # fzf
